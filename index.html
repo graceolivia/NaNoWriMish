@@ -56,6 +56,12 @@
     details{border:1px solid #00ff00;background:#001100;border-radius:12px;padding:8px 10px}
     details > summary{cursor:pointer;color:var(--muted)}
     .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .status-badge{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid;margin-left:8px;font-weight:normal}
+    .status-on-track{background:#002200;border-color:#00ff00;color:#00ff00}
+    .status-ahead{background:#002200;border-color:#44ff00;color:#44ff00}
+    .status-behind{background:#220000;border-color:#ff4400;color:#ff4400}
+    .status-win{background:#004400;border-color:#00ff00;color:#00ff00;font-weight:bold}
+    .status-fail{background:#440000;border-color:#ff4400;color:#ff4400;font-weight:bold}
   </style>
 </head>
 <body>
@@ -64,13 +70,14 @@
       <div>
         <h1>november writing tracker</h1>
         <div class="subtitle">fiction (target 25,000 words) + substack (4 essays) - due by December 1st</div>
+        <div class="muted small" style="margin-top:4px">Today: <span id="currentDate"></span> | Challenge starts: Nov 1, 2025 | Deadline: Dec 1, 2025</div>
       </div>
     </header>
 
     <div class="grid">
       <!-- LEFT COLUMN: FICTION -->
       <section class="card" id="fictionCard">
-        <h2>fiction progress</h2>
+        <h2>fiction progress <span id="fictionStatus" class="status-badge"></span></h2>
         <div class="bar" aria-label="fiction progress">
           <span id="fictionBar"></span>
         </div>
@@ -93,7 +100,7 @@
 
       <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
       <section class="card">
-        <h2>substack goals</h2>
+        <h2>substack goals <span id="essayStatus" class="status-badge"></span></h2>
         <div class="row"><div class="badge"><span id="essayCount">0</span>/4 done</div></div>
         <div style="height:8px"></div>
         <div id="essays"></div>
@@ -184,9 +191,120 @@
     }
 
 
+    function calculateStatus(){
+      const now = new Date();
+      const startDate = new Date('2025-11-01'); // November 1st start
+      const endDate = new Date('2025-12-01');   // December 1st deadline
+      
+      // Debug: log the dates
+      console.log('Current date:', now.toDateString());
+      console.log('Start date:', startDate.toDateString());
+      console.log('End date:', endDate.toDateString());
+      console.log('Now >= endDate?', now >= endDate);
+      console.log('Now < startDate?', now < startDate);
+      
+      const totalWords = state.sessions.reduce((a,b) => a + (+b.words||0), 0);
+      const essaysCompleted = state.essays.filter(e => e.done).length;
+      
+      // Check if challenge is complete (December 1st or later)
+      if (now >= endDate) {
+        // Final results - WIN or FAIL
+        const fictionBadge = el('#fictionStatus');
+        if (totalWords >= 25000) {
+          fictionBadge.textContent = `WIN (${totalWords.toLocaleString()} words)`;
+          fictionBadge.className = 'status-badge status-win';
+        } else {
+          fictionBadge.textContent = `FAIL (${totalWords.toLocaleString()}/25,000)`;
+          fictionBadge.className = 'status-badge status-fail';
+        }
+        
+        const essayBadge = el('#essayStatus');
+        if (essaysCompleted >= 4) {
+          essayBadge.textContent = `WIN (${essaysCompleted}/4 essays)`;
+          essayBadge.className = 'status-badge status-win';
+        } else {
+          essayBadge.textContent = `FAIL (${essaysCompleted}/4 essays)`;
+          essayBadge.className = 'status-badge status-fail';
+        }
+        return;
+      }
+      
+      // Check if challenge hasn't started yet
+      if (now < startDate) {
+        const fictionBadge = el('#fictionStatus');
+        fictionBadge.textContent = 'not started yet';
+        fictionBadge.className = 'status-badge status-on-track';
+        
+        const essayBadge = el('#essayStatus');
+        essayBadge.textContent = 'not started yet';
+        essayBadge.className = 'status-badge status-on-track';
+        return;
+      }
+      
+      // Calculate days elapsed since start (only count if started)
+      const daysElapsed = Math.max(0, Math.floor((now - startDate) / (1000 * 60 * 60 * 24)));
+      
+      // Fiction status (834 words per day target)
+      const targetWords = daysElapsed * 834;
+      
+      let fictionStatus = 'on track';
+      let fictionClass = 'status-on-track';
+      
+      if (daysElapsed === 0) {
+        // First day - just check if any progress made
+        fictionStatus = totalWords > 0 ? 'started' : 'on track';
+      } else if (totalWords > targetWords * 1.1) {
+        fictionStatus = 'ahead';
+        fictionClass = 'status-ahead';
+      } else if (totalWords < targetWords * 0.9) {
+        fictionStatus = 'behind';
+        fictionClass = 'status-behind';
+      }
+      
+      // Essay status (1 essay every 7 days)
+      const targetEssays = Math.floor(daysElapsed / 7);
+      
+      let essayStatus = 'on track';
+      let essayClass = 'status-on-track';
+      
+      if (daysElapsed < 7) {
+        // First week - no essays due yet
+        essayStatus = essaysCompleted > 0 ? 'ahead' : 'on track';
+        essayClass = essaysCompleted > 0 ? 'status-ahead' : 'status-on-track';
+      } else if (essaysCompleted > targetEssays) {
+        essayStatus = 'ahead';
+        essayClass = 'status-ahead';
+      } else if (essaysCompleted < targetEssays) {
+        essayStatus = 'behind';
+        essayClass = 'status-behind';
+      }
+      
+      // Update UI
+      const fictionBadge = el('#fictionStatus');
+      fictionBadge.textContent = fictionStatus;
+      fictionBadge.className = `status-badge ${fictionClass}`;
+      
+      const essayBadge = el('#essayStatus');
+      essayBadge.textContent = essayStatus;
+      essayBadge.className = `status-badge ${essayClass}`;
+    }
+
+    function displayCurrentDate(){
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      };
+      el('#currentDate').textContent = now.toLocaleDateString('en-US', options);
+    }
+
     function update(){
+      displayCurrentDate();
       renderSessions();
       renderEssays();
+      calculateStatus();
     }
 
 
