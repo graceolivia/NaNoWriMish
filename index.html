@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>november writing tracker — fiction + substack</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&display=swap');
     :root{
-      --bg:#0f1115; --panel:#161922; --muted:#8a8f98; --text:#e6e9ef; --acc:#56b6c2; --ok:#98c379; --warn:#e5c07b; --danger:#e06c75;
-      --radius:16px;
+      --bg:#000000; --panel:#001100; --muted:#00ff00; --text:#00ff00; --acc:#00ff41; --ok:#00ff00; --warn:#44ff00; --danger:#ff4400;
+      --radius:8px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; background:var(--bg); color:var(--text);}
+    body{margin:0;font:16px/1.5 'Source Code Pro', 'Courier New', monospace; background:var(--bg); color:var(--text); text-shadow: 0 0 2px currentColor;}
     a{color:var(--acc)}
     .wrap{max-width:1050px;margin:24px auto;padding:0 16px 64px}
     header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:20px 0 8px}
@@ -19,27 +20,27 @@
     .subtitle{color:var(--muted);font-size:13px}
     .grid{display:grid;gap:16px}
     @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px 16px 18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card{background:linear-gradient(180deg, rgba(0,255,0,0.05), rgba(0,255,0,0.02));border:1px solid #00ff00;border-radius:var(--radius);padding:16px 16px 18px;box-shadow:0 0 10px rgba(0,255,0,.3)}
     .card h2{margin:0 0 8px;font-size:18px}
     .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .muted{color:var(--muted)}
-    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 10px;background:#111522;border:1px solid rgba(255,255,255,.06);font-size:12px}
-    .bar{height:18px;border-radius:999px;background:#0c1220;border:1px solid rgba(255,255,255,.08);overflow:hidden;position:relative}
-    .bar > span{display:block;height:100%;background:linear-gradient(90deg, var(--acc), #6bd5df);width:0%}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 10px;background:#001100;border:1px solid #00ff00;font-size:12px}
+    .bar{height:18px;border-radius:999px;background:#001100;border:1px solid #00ff00;overflow:hidden;position:relative}
+    .bar > span{display:block;height:100%;background:linear-gradient(90deg, #00ff00, #44ff44);width:0%}
     .kpi{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
-    .kpi .box{background:#0c1220;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px 12px;min-width:120px}
+    .kpi .box{background:#001100;border:1px solid #00ff00;border-radius:12px;padding:10px 12px;min-width:120px}
     .kpi .big{font-weight:700;font-variant-numeric:tabular-nums}
     label{font-size:13px;color:var(--muted)}
-    input[type="text"], input[type="number"], input[type="date"], textarea{width:100%;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0d1220;color:var(--text);}
+    input[type="text"], input[type="number"], input[type="date"], textarea{width:100%;padding:10px 12px;border-radius:12px;border:1px solid #00ff00;background:#001100;color:var(--text);}
     textarea{min-height:72px}
-    button{cursor:pointer;border:1px solid rgba(255,255,255,.1);background:#10182b;color:var(--text);padding:10px 14px;border-radius:12px}
-    button.primary{background:linear-gradient(180deg,#1b263b,#192234);border-color:#2a3a58}
-    button.ghost{background:transparent;border-color:rgba(255,255,255,.08)}
-    button.ok{background:#0f1a12;border-color:#224d2d;color:#b6f3c2}
-    button.warn{background:#1b140a;border-color:#5b4521;color:#ffd89a}
-    button.danger{background:#2a1013;border-color:#6b1e28;color:#ffc0c8}
+    button{cursor:pointer;border:1px solid #00ff00;background:#001100;color:var(--text);padding:10px 14px;border-radius:12px}
+    button.primary{background:linear-gradient(180deg,#002200,#001100);border-color:#00ff00}
+    button.ghost{background:transparent;border-color:#00ff00}
+    button.ok{background:#002200;border-color:#00ff00;color:#00ff00}
+    button.warn{background:#002200;border-color:#44ff00;color:#44ff00}
+    button.danger{background:#220000;border-color:#ff4400;color:#ff4400}
     table{width:100%;border-collapse:collapse;border-spacing:0}
-    th,td{padding:8px 10px;border-bottom:1px dashed rgba(255,255,255,.08);vertical-align:top}
+    th,td{padding:8px 10px;border-bottom:1px dashed #00ff00;vertical-align:top}
     th{color:var(--muted);text-align:left;font-weight:600}
     tr:last-child td{border-bottom:none}
     .right{text-align:right}
@@ -48,11 +49,11 @@
     .vis-hide{display:none}
     .footer{margin-top:24px;color:var(--muted);font-size:12px}
     .checkbox-row{display:flex;gap:10px;align-items:center}
-    .essay{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:#0d1220}
+    .essay{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px;border-radius:12px;border:1px solid #00ff00;background:#001100}
     .essay input[type="text"]{height:36px}
-    .essay.published{background:linear-gradient(180deg,#0d1220,#0f1b26);opacity:.95}
-    .badge{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:#0c1220;color:var(--muted)}
-    details{border:1px solid rgba(255,255,255,.06);background:#0d1220;border-radius:12px;padding:8px 10px}
+    .essay.published{background:linear-gradient(180deg,#002200,#001100);opacity:.95}
+    .badge{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #00ff00;background:#001100;color:var(--muted)}
+    details{border:1px solid #00ff00;background:#001100;border-radius:12px;padding:8px 10px}
     details > summary{cursor:pointer;color:var(--muted)}
     .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
   </style>
@@ -62,12 +63,7 @@
     <header>
       <div>
         <h1>november writing tracker</h1>
-        <div class="subtitle">fiction (target 25,000 words) + substack (4 essays) — autosaves to your browser</div>
-      </div>
-      <div class="row">
-        <button class="ghost" id="shareModeBtn" title="toggle public view (hides notes)">public view: <span id="shareModeState">off</span></button>
-        <button class="warn" id="exportBtn">export json</button>
-        <button class="danger" id="resetBtn" title="clear everything">reset</button>
+        <div class="subtitle">fiction (target 25,000 words) + substack (4 essays) - due by December 1st</div>
       </div>
     </header>
 
@@ -85,34 +81,11 @@
           <div class="box"><div class="muted small">sessions</div><div class="big" id="sessionCount">0</div></div>
         </div>
 
-        <div style="height:10px"></div>
-        <details>
-          <summary>add a session</summary>
-          <div style="height:8px"></div>
-          <div class="split">
-            <div>
-              <label for="fDate">date</label>
-              <input id="fDate" type="date" />
-            </div>
-            <div>
-              <label for="fWords">words</label>
-              <input id="fWords" type="number" min="0" step="10" placeholder="e.g. 850" />
-            </div>
-          </div>
-          <div style="height:8px"></div>
-          <label for="fNote">notes (kept private; hidden in public view)</label>
-          <textarea id="fNote" placeholder="scene summary, vibe, where you left off"></textarea>
-          <div style="height:8px"></div>
-          <div class="row">
-            <button class="primary" id="addSessionBtn">add session</button>
-            <span class="muted small">protip: log at end of each daycare block; use notes to seed substack</span>
-          </div>
-        </details>
 
         <div style="height:12px"></div>
         <table id="sessionTable">
           <thead>
-            <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th><th style="width:70px">—</th></tr>
+            <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
           </thead>
           <tbody></tbody>
         </table>
@@ -124,63 +97,44 @@
         <div class="row"><div class="badge"><span id="essayCount">0</span>/4 done</div></div>
         <div style="height:8px"></div>
         <div id="essays"></div>
-        <div style="height:10px"></div>
-        <button class="primary" id="addEssayBtn">add essay slot</button>
-        <button class="ghost" id="ensureFourBtn" title="ensure exactly 4 slots">ensure 4</button>
-
-        <div style="height:18px"></div>
-        <h2>settings</h2>
-        <div class="split">
-          <div>
-            <label for="targetWords">fiction target (words)</label>
-            <input id="targetWords" type="number" min="1000" step="500" value="25000" />
-          </div>
-          <div>
-            <label for="targetEssays">essay target (count)</label>
-            <input id="targetEssays" type="number" min="1" step="1" value="4" />
-          </div>
-        </div>
-        <div style="height:8px"></div>
-        <div class="row"><button id="saveSettingsBtn" class="ok">save settings</button><span class="muted small">defaults are 25k fiction, 4 essays</span></div>
-
-        <div style="height:18px"></div>
-        <h2>data backup</h2>
-        <details>
-          <summary>export / import json</summary>
-          <div style="height:8px"></div>
-          <textarea id="jsonArea" class="mono" placeholder="your data will appear here on export; paste here and click import to restore"></textarea>
-          <div style="height:8px"></div>
-          <div class="row">
-            <button id="doExport" class="warn">export</button>
-            <button id="doImport" class="primary">import</button>
-          </div>
-        </details>
       </section>
     </div>
 
-    <div class="footer">made for a sane november. everything stays in your browser (localstorage). put this file in a github pages repo as <span class="mono">index.html</span>.</div>
+    <div class="footer">a custom page to keep me on track for this writing challenge.</div>
   </div>
 
   <script>
-    // --- tiny state store ---
+    // --- hardcoded state ---
     const KEY = 'nano-2025-tracker-v1';
     const el = s => document.querySelector(s);
     const els = s => Array.from(document.querySelectorAll(s));
+    
+    // HARDCODED PROGRESS DATA - EDIT THESE VALUES
     const state = {
       targetWords: 25000,
       targetEssays: 4,
-      sessions: [], // {id, date, words, note}
-      essays: []    // {id, title, done, link, date}
+      sessions: [
+        // Add your writing sessions here
+        // Example: {id: 'sess1', date: '2024-11-01', words: 1200, note: 'Your notes here'}
+      ],
+      essays: [
+        {id: 'essay1', title: '', done: false},
+        {id: 'essay2', title: '', done: false},
+        {id: 'essay3', title: '', done: false},
+        {id: 'essay4', title: '', done: false}
+      ]
     };
 
-    // load state
+    // load state (now uses hardcoded data)
     function load(){
-      const raw = localStorage.getItem(KEY);
-      if(!raw) return;
-      try{const data = JSON.parse(raw);Object.assign(state, data);}catch(e){console.warn('bad data', e)}
+      // State is now hardcoded above - no localStorage loading needed
+      console.log('Using hardcoded progress data');
     }
 
-    function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+    function save(){ 
+      // Save function disabled - data is hardcoded
+      console.log('Save disabled - using hardcoded data');
+    }
 
     function uid(){ return Math.random().toString(36).slice(2,10); }
 
@@ -190,24 +144,15 @@
     function renderSessions(){
       const tbody = el('#sessionTable tbody');
       tbody.innerHTML = '';
-      const share = shareMode();
       state.sessions.sort((a,b)=> (a.date||'').localeCompare(b.date));
       for(const s of state.sessions){
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${s.date||''}</td>
           <td class="right">${fmt(s.words||0)}</td>
-          <td>${share? '<span class="muted">(hidden)</span>' : (s.note? escapeHTML(s.note) : '<span class="muted">—</span>')}</td>
-          <td><button class="ghost" data-del="${s.id}">delete</button></td>`;
+          <td>${s.note? escapeHTML(s.note) : '<span class="muted">—</span>'}</td>`;
         tbody.appendChild(tr);
       }
-      tbody.addEventListener('click', (e)=>{
-        const id = e.target.getAttribute('data-del');
-        if(id){
-          const idx = state.sessions.findIndex(x=>x.id===id);
-          if(idx>-1){ state.sessions.splice(idx,1); save(); update(); }
-        }
-      }, { once:true });
 
       const total = state.sessions.reduce((a,b)=>a + (+b.words||0), 0);
       el('#fictionTotal').textContent = fmt(total);
@@ -230,41 +175,20 @@
         const row = document.createElement('div');
         row.className = 'essay' + (e.done? ' published' : '');
         row.innerHTML = `
-          <input type="checkbox" ${e.done? 'checked' : ''} data-done="${e.id}" title="mark published" />
-          <input type="text" value="${escapeAttr(e.title||'untitled essay')}" data-title="${e.id}" placeholder="essay title" />
-          <button class="ghost" data-rem="${e.id}">remove</button>
+          <span style="width:20px;text-align:center;display:inline-block">${e.done? '✓' : '○'}</span>
+          <span style="flex:1">${e.title || 'untitled essay'}</span>
+          <span class="badge">${e.done? 'done' : 'pending'}</span>
         `;
         box.appendChild(row);
       });
-
-      box.addEventListener('input', (ev)=>{
-        const idT = ev.target.getAttribute('data-title');
-        if(idT){ const item = state.essays.find(x=>x.id===idT); if(item){ item.title = ev.target.value; save(); } }
-      }, { once:true });
-      box.addEventListener('change', (ev)=>{
-        const idD = ev.target.getAttribute('data-done');
-        if(idD){ const item = state.essays.find(x=>x.id===idD); if(item){ item.done = ev.target.checked; save(); update(); } }
-      }, { once:true });
-      box.addEventListener('click', (ev)=>{
-        const idR = ev.target.getAttribute('data-rem');
-        if(idR){ const i = state.essays.findIndex(x=>x.id===idR); if(i>-1){ state.essays.splice(i,1); save(); update(); } }
-      }, { once:true });
     }
 
-    function renderSettings(){
-      el('#targetWords').value = state.targetWords;
-      el('#targetEssays').value = state.targetEssays;
-    }
 
     function update(){
       renderSessions();
       renderEssays();
-      renderSettings();
-      el('#shareModeState').textContent = shareMode()? 'ON' : 'off';
     }
 
-    function shareMode(){ return localStorage.getItem(KEY+'-share') === '1'; }
-    function toggleShare(){ const v = shareMode()? '0':'1'; localStorage.setItem(KEY+'-share', v); update(); }
 
     // --- helpers ---
     function escapeHTML(s=''){ return s.replace(/[&<>]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]) ); }
@@ -273,58 +197,8 @@
     // --- initial boot ---
     function boot(){
       load();
-      // defaults if empty
-      if(state.essays.length===0){ for(let i=0;i<4;i++){ state.essays.push({id:uid(), title:'', done:false}); } }
-      save();
+      // State is already populated with hardcoded data
       update();
-
-      // prefill date
-      const d = new Date();
-      el('#fDate').value = d.toISOString().slice(0,10);
-
-      // handlers
-      el('#addSessionBtn').addEventListener('click', ()=>{
-        const date = el('#fDate').value || new Date().toISOString().slice(0,10);
-        const words = Math.max(0, parseInt(el('#fWords').value||'0',10));
-        const note = el('#fNote').value||'';
-        if(!words){ alert('enter a word count'); return; }
-        state.sessions.push({id:uid(), date, words, note});
-        el('#fWords').value = '';
-        el('#fNote').value = '';
-        save(); update();
-      });
-
-      el('#addEssayBtn').addEventListener('click', ()=>{ state.essays.push({id:uid(), title:'', done:false}); save(); update(); });
-      el('#ensureFourBtn').addEventListener('click', ()=>{
-        const t = +state.targetEssays||4;
-        while(state.essays.length < t){ state.essays.push({id:uid(), title:'', done:false}); }
-        if(state.essays.length > t){ state.essays.length = t; }
-        save(); update();
-      });
-
-      el('#saveSettingsBtn').addEventListener('click', ()=>{
-        state.targetWords = Math.max(1000, parseInt(el('#targetWords').value||'25000',10));
-        state.targetEssays = Math.max(1, parseInt(el('#targetEssays').value||'4',10));
-        save(); update();
-      });
-
-      el('#exportBtn').addEventListener('click', ()=>{
-        el('#jsonArea').value = JSON.stringify(state, null, 2);
-      });
-      el('#doExport').addEventListener('click', ()=>{ el('#jsonArea').value = JSON.stringify(state, null, 2); });
-      el('#doImport').addEventListener('click', ()=>{
-        try{ const data = JSON.parse(el('#jsonArea').value); Object.assign(state, data); save(); update(); alert('imported'); }
-        catch(e){ alert('invalid json'); }
-      });
-
-      el('#resetBtn').addEventListener('click', ()=>{
-        if(confirm('this will erase all local data for this tracker. proceed?')){
-          localStorage.removeItem(KEY);
-          location.reload();
-        }
-      });
-
-      el('#shareModeBtn').addEventListener('click', ()=> toggleShare());
     }
 
     document.addEventListener('DOMContentLoaded', boot);
