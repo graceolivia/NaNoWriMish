@@ -154,7 +154,7 @@
     function renderSessions(){
       const tbody = el('#sessionTable tbody');
       tbody.innerHTML = '';
-      state.sessions.sort((a,b)=> (a.date||'').localeCompare(b.date));
+      state.sessions.sort((a,b)=> (b.date||'').localeCompare(a.date||''));
       for(const s of state.sessions){
         const tr = document.createElement('tr');
         tr.innerHTML = `
