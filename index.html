@@ -128,7 +128,8 @@
         {date: '2025-11-03', words: 908, note: 'introduced the parents more'},
         {date: '2025-11-04', words: 932, note: 'working on novel while sick'},
         {date: '2025-11-05', words: 1136, note: 'wrote part of chapter that needs a lot more research. need to research before picking up tomorrow'},
-        {date: '2025-11-06', words: 899, note: 'did a lot of background planning, introduced side characters, ironed out details'}
+        {date: '2025-11-06', words: 899, note: 'did a lot of background planning, introduced side characters, ironed out details'},
+        {date: '2025-11-07', words: 1698, note: 'forest scene and ball'}
       ],
       essays: [
         {id: 'essay1', title: '', done: false},
@@ -316,7 +317,7 @@
 
     // --- helpers ---
     function escapeHTML(s=''){ return s.replace(/[&<>]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]) ); }
-    function escapeAttr(s=''){ return s.replace(/[&<>\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]) ); }
+    function escapeAttr(s=''){ return s.replace(/[&<>\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]) ); }
 
     // --- initial boot ---
     function boot(){
