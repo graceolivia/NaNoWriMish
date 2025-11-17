@@ -127,7 +127,7 @@
         {date: '2025-11-02', words: 1627, note: 'wrote chapter 2, introduced mysterious woods guy and ominous warnings'},
         {date: '2025-11-03', words: 908, note: 'introduced the parents more'},
         {date: '2025-11-04', words: 932, note: 'working on novel while sick'},
-        {date: '2025-11-05', words: 1136, note: 'wrote part of chapter that needs a lot more research. need to research before picking up tomorrow'},
+        {date: '2025-11-05', words: 1136, note: 'working on novel while sick. need to research before picking up tomorrow'},
         {date: '2025-11-06', words: 899, note: 'did a lot of background planning, introduced side characters, ironed out details'},
         {date: '2025-11-07', words: 1698, note: 'forest scene and ball'},
         {date: '2025-11-09', words: 986, note: 'nice little sisters scene'},
@@ -136,7 +136,8 @@
         {date: '2025-11-12', words: 878, note: 'hard-won words, barely dragged it out'},
         {date: '2025-11-13', words: 1020, note: 'forest scene'},
         {date: '2025-11-14', words: 866, note: ''},
-        {date: '2025-11-15', words: 942, note: 'thornton fight scene'}
+        {date: '2025-11-15', words: 942, note: 'thornton fight scene'},
+        {date: '2025-11-17', words: 1419, note: 'first fairy ball and night sneak away'}
       ],
       essays: [
         {id: 'essay1', title: '', done: false},
@@ -324,7 +325,7 @@
 
     // --- helpers ---
     function escapeHTML(s=''){ return s.replace(/[&<>]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]) ); }
-    function escapeAttr(s=''){ return s.replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]) ); }
+    function escapeAttr(s=''){ return s.replace(/[&<>\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]) ); }
 
     // --- initial boot ---
     function boot(){
