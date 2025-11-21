@@ -139,7 +139,8 @@
         {date: '2025-11-15', words: 942, note: 'thornton fight scene'},
         {date: '2025-11-17', words: 1419, note: 'first fairy ball and night sneak away'},
         {date: '2025-11-19', words: 1421, note: 'interview servant and consult father'},
-        {date: '2025-11-20', words: 1337, note: '2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day'}
+        {date: '2025-11-20', words: 1337, note: '2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day'},
+        {date: '2025-11-21', words: 862, note: 'Scene with two characters in the woods discovering a ball invitation and doing an experiment'}
       ],
       essays: [
         {id: 'essay1', title: '', done: false},
@@ -327,7 +328,7 @@
 
     // --- helpers ---
     function escapeHTML(s=''){ return s.replace(/[&<>]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]) ); }
-    function escapeAttr(s=''){ return s.replace(/[&<>\\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','\\"':'&quot;'}[c]) ); }
+    function escapeAttr(s=''){ return s.replace(/[&<>\\\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;'}[c]) ); }
 
     // --- initial boot ---
     function boot(){
