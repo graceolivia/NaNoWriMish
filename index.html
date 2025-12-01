@@ -70,13 +70,72 @@
     <header>
       <div>
         <h1>writing tracker — november + december 2025</h1>
-        <div class="subtitle">November: 25,000 words (COMPLETE!) | December: NaNoWriMo Part 2 - 25,000 words</div>
+        <div class="subtitle">December: NaNoWriMo Part 2 - 25,000 words | November: 25,000 words (COMPLETE!)</div>
         <div class="muted small" style="margin-top:4px">Today: <span id="currentDate"></span></div>
       </div>
     </header>
 
+    <!-- DECEMBER SECTION (ACTIVE) -->\n    <div style="margin-bottom:32px">
+      <h2 style="color:var(--text);margin-bottom:16px">🎄 December Progress — NaNoWriMo Part 2</h2>
+      
+      <div class="grid">
+        <!-- LEFT COLUMN: FICTION -->
+        <section class="card" id="decFictionCard">
+          <h2>fiction progress <span id="decFictionStatus" class="status-badge status-on-track">on track</span></h2>
+          <div class="bar" aria-label="december fiction progress">
+            <span id="decFictionBar" style="width:0%"></span>
+          </div>
+          <div class="kpi">
+            <div class="box"><div class="muted small">total words</div><div class="big" id="decFictionTotal">0</div></div>
+            <div class="box"><div class="muted small">target</div><div class="big" id="decFictionTarget">25,000</div></div>
+            <div class="box"><div class="muted small">completion</div><div class="big" id="decFictionPct">0%</div></div>
+            <div class="box"><div class="muted small">sessions</div><div class="big" id="decSessionCount">0</div></div>
+          </div>
+
+          <div style="height:12px"></div>
+          <table id="decSessionTable">
+            <thead>
+              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let's get writing!</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
+        <section class="card">
+          <h2>substack goals <span id="decEssayStatus" class="status-badge status-on-track">on track</span></h2>
+          <div class="row"><div class="badge"><span id="decEssayCount">0</span>/4 done</div></div>
+          <div style="height:8px"></div>
+          <div id="decEssays">
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
     <!-- NOVEMBER SECTION (COMPLETED) -->
-    <div style="margin-bottom:32px">
+    <div class="section-divider">
       <h2 style="color:var(--text);margin-bottom:16px">📝 November Progress — COMPLETE!</h2>
       
       <div class="grid">
@@ -132,66 +191,6 @@
           <div class="row"><div class="badge"><span id="novEssayCount">0</span>/4 done</div></div>
           <div style="height:8px"></div>
           <div id="novEssays">
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- DECEMBER SECTION (NEW) -->
-    <div class="section-divider">
-      <h2 style="color:var(--text);margin-bottom:16px">🎄 December Progress — NaNoWriMo Part 2</h2>
-      
-      <div class="grid">
-        <!-- LEFT COLUMN: FICTION -->
-        <section class="card" id="decFictionCard">
-          <h2>fiction progress <span id="decFictionStatus" class="status-badge status-on-track">on track</span></h2>
-          <div class="bar" aria-label="december fiction progress">
-            <span id="decFictionBar" style="width:0%"></span>
-          </div>
-          <div class="kpi">
-            <div class="box"><div class="muted small">total words</div><div class="big" id="decFictionTotal">0</div></div>
-            <div class="box"><div class="muted small">target</div><div class="big" id="decFictionTarget">25,000</div></div>
-            <div class="box"><div class="muted small">completion</div><div class="big" id="decFictionPct">0%</div></div>
-            <div class="box"><div class="muted small">sessions</div><div class="big" id="decSessionCount">0</div></div>
-          </div>
-
-          <div style="height:12px"></div>
-          <table id="decSessionTable">
-            <thead>
-              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
-            </thead>
-            <tbody>
-              <tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let's get writing!</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
-        <section class="card">
-          <h2>substack goals <span id="decEssayStatus" class="status-badge status-on-track">on track</span></h2>
-          <div class="row"><div class="badge"><span id="decEssayCount">0</span>/4 done</div></div>
-          <div style="height:8px"></div>
-          <div id="decEssays">
             <div class="essay">
               <span style="width:20px;text-align:center;display:inline-block">○</span>
               <span style="flex:1">untitled essay</span>
