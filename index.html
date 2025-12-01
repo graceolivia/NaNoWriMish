@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>november writing tracker — fiction + substack</title>
+  <title>november + december writing tracker — fiction + substack</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&display=swap');
     :root{
@@ -62,90 +62,177 @@
     .status-behind{background:#220000;border-color:#ff4400;color:#ff4400}
     .status-win{background:#004400;border-color:#00ff00;color:#00ff00;font-weight:bold}
     .status-fail{background:#440000;border-color:#ff4400;color:#ff4400;font-weight:bold}
+    .section-divider{margin:32px 0;border-top:2px solid #00ff00;padding-top:16px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div>
-        <h1>november writing tracker</h1>
-        <div class="subtitle">fiction (target 25,000 words) + substack (4 essays) - due by December 1st</div>
-        <div class="muted small" style="margin-top:4px">Today: <span id="currentDate"></span> | Challenge starts: Nov 1, 2025 | Deadline: Dec 1, 2025</div>
+        <h1>writing tracker — november + december 2025</h1>
+        <div class="subtitle">November: 25,000 words (COMPLETE!) | December: NaNoWriMo Part 2 - 25,000 words</div>
+        <div class="muted small" style="margin-top:4px">Today: <span id="currentDate"></span></div>
       </div>
     </header>
 
-    <div class="grid">
-      <!-- LEFT COLUMN: FICTION -->
-      <section class="card" id="fictionCard">
-        <h2>fiction progress <span id="fictionStatus" class="status-badge"></span></h2>
-        <div class="bar" aria-label="fiction progress">
-          <span id="fictionBar"></span>
-        </div>
-        <div class="kpi">
-          <div class="box"><div class="muted small">total words</div><div class="big" id="fictionTotal">0</div></div>
-          <div class="box"><div class="muted small">target</div><div class="big" id="fictionTarget">25000</div></div>
-          <div class="box"><div class="muted small">completion</div><div class="big" id="fictionPct">0%</div></div>
-          <div class="box"><div class="muted small">sessions</div><div class="big" id="sessionCount">0</div></div>
-        </div>
+    <!-- NOVEMBER SECTION (COMPLETED) -->
+    <div style="margin-bottom:32px">
+      <h2 style="color:var(--text);margin-bottom:16px">📝 November Progress — COMPLETE!</h2>
+      
+      <div class="grid">
+        <!-- LEFT COLUMN: FICTION -->
+        <section class="card" id="novFictionCard">
+          <h2>fiction progress <span class="status-badge status-win">WIN (25,475 words)</span></h2>
+          <div class="bar" aria-label="november fiction progress">
+            <span style="width:100%"></span>
+          </div>
+          <div class="kpi">
+            <div class="box"><div class="muted small">total words</div><div class="big">25,475</div></div>
+            <div class="box"><div class="muted small">target</div><div class="big">25,000</div></div>
+            <div class="box"><div class="muted small">completion</div><div class="big">101.9%</div></div>
+            <div class="box"><div class="muted small">sessions</div><div class="big">23</div></div>
+          </div>
 
+          <div style="height:12px"></div>
+          <table id="novSessionTable">
+            <thead>
+              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2025-11-26</td><td class="right">1,710</td><td>More ball scene 🎉 25,000 WORD GOAL COMPLETE! (25,475 total = 101.9% of goal)</td></tr>
+              <tr><td>2025-11-25</td><td class="right">970</td><td>More ball</td></tr>
+              <tr><td>2025-11-24</td><td class="right">929</td><td>Part of ball scene</td></tr>
+              <tr><td>2025-11-23</td><td class="right">841</td><td>Intro to ball scene. Done</td></tr>
+              <tr><td>2025-11-22</td><td class="right">871</td><td>Setup for fairy ball scene</td></tr>
+              <tr><td>2025-11-21</td><td class="right">862</td><td>Scene with two characters in the woods discovering a ball invitation and doing an experiment</td></tr>
+              <tr><td>2025-11-20</td><td class="right">1,337</td><td>2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day</td></tr>
+              <tr><td>2025-11-19</td><td class="right">1,421</td><td>interview servant and consult father</td></tr>
+              <tr><td>2025-11-17</td><td class="right">1,419</td><td>first fairy ball and night sneak away</td></tr>
+              <tr><td>2025-11-15</td><td class="right">942</td><td>thornton fight scene</td></tr>
+              <tr><td>2025-11-14</td><td class="right">866</td><td></td></tr>
+              <tr><td>2025-11-13</td><td class="right">1,020</td><td>forest scene</td></tr>
+              <tr><td>2025-11-12</td><td class="right">878</td><td>hard-won words, barely dragged it out</td></tr>
+              <tr><td>2025-11-11</td><td class="right">1,222</td><td>hartwell scene and tam lin scene</td></tr>
+              <tr><td>2025-11-10</td><td class="right">858</td><td>sisters scene and hartwell scene</td></tr>
+              <tr><td>2025-11-09</td><td class="right">986</td><td>nice little sisters scene</td></tr>
+              <tr><td>2025-11-07</td><td class="right">1,698</td><td>forest scene and ball</td></tr>
+              <tr><td>2025-11-06</td><td class="right">899</td><td>did a lot of background planning, introduced side characters, ironed out details</td></tr>
+              <tr><td>2025-11-05</td><td class="right">1,136</td><td>working on novel while sick. need to research before picking up tomorrow</td></tr>
+              <tr><td>2025-11-04</td><td class="right">932</td><td>working on novel while sick</td></tr>
+              <tr><td>2025-11-03</td><td class="right">908</td><td>introduced the parents more</td></tr>
+              <tr><td>2025-11-02</td><td class="right">1,627</td><td>wrote chapter 2, introduced mysterious woods guy and ominous warnings</td></tr>
+              <tr><td>2025-11-01</td><td class="right">1,143</td><td>wrote a short flashback preamble that introduced the main character and her sister</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-        <div style="height:12px"></div>
-        <table id="sessionTable">
-          <thead>
-            <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </section>
-
-      <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
-      <section class="card">
-        <h2>substack goals <span id="essayStatus" class="status-badge"></span></h2>
-        <div class="row"><div class="badge"><span id="essayCount">0</span>/4 done</div></div>
-        <div style="height:8px"></div>
-        <div id="essays"></div>
-      </section>
+        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
+        <section class="card">
+          <h2>substack goals <span id="novEssayStatus" class="status-badge">0/4 done</span></h2>
+          <div class="row"><div class="badge"><span id="novEssayCount">0</span>/4 done</div></div>
+          <div style="height:8px"></div>
+          <div id="novEssays">
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <div class="footer">a custom page to keep me on track for this writing challenge.</div>
+    <!-- DECEMBER SECTION (NEW) -->
+    <div class="section-divider">
+      <h2 style="color:var(--text);margin-bottom:16px">🎄 December Progress — NaNoWriMo Part 2</h2>
+      
+      <div class="grid">
+        <!-- LEFT COLUMN: FICTION -->
+        <section class="card" id="decFictionCard">
+          <h2>fiction progress <span id="decFictionStatus" class="status-badge status-on-track">on track</span></h2>
+          <div class="bar" aria-label="december fiction progress">
+            <span id="decFictionBar" style="width:0%"></span>
+          </div>
+          <div class="kpi">
+            <div class="box"><div class="muted small">total words</div><div class="big" id="decFictionTotal">0</div></div>
+            <div class="box"><div class="muted small">target</div><div class="big" id="decFictionTarget">25,000</div></div>
+            <div class="box"><div class="muted small">completion</div><div class="big" id="decFictionPct">0%</div></div>
+            <div class="box"><div class="muted small">sessions</div><div class="big" id="decSessionCount">0</div></div>
+          </div>
+
+          <div style="height:12px"></div>
+          <table id="decSessionTable">
+            <thead>
+              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let's get writing!</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
+        <section class="card">
+          <h2>substack goals <span id="decEssayStatus" class="status-badge status-on-track">on track</span></h2>
+          <div class="row"><div class="badge"><span id="decEssayCount">0</span>/4 done</div></div>
+          <div style="height:8px"></div>
+          <div id="decEssays">
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+            <div class="essay">
+              <span style="width:20px;text-align:center;display:inline-block">○</span>
+              <span style="flex:1">untitled essay</span>
+              <span class="badge">pending</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="footer">a custom page to keep me on track for writing challenges. November goal: COMPLETE! 🎉 Now onto December!</div>
   </div>
 
   <script>
     // --- hardcoded state ---
-    const KEY = 'nano-2025-tracker-v1';
+    const KEY = 'nano-2025-tracker-v2-december';
     const el = s => document.querySelector(s);
     const els = s => Array.from(document.querySelectorAll(s));
     
-    // HARDCODED PROGRESS DATA - EDIT THESE VALUES
-    const state = {
+    // DECEMBER PROGRESS DATA - EDIT THESE VALUES
+    const decemberState = {
       targetWords: 25000,
       targetEssays: 4,
       sessions: [
-        // Add your writing sessions here
-        // Example: {id: 'sess1', date: '2024-11-01', words: 1200, note: 'Your notes here'}
-        {date: '2025-11-01', words: 1143, note: 'wrote a short flashback preamble that introduced the main character and her sister'},
-        {date: '2025-11-02', words: 1627, note: 'wrote chapter 2, introduced mysterious woods guy and ominous warnings'},
-        {date: '2025-11-03', words: 908, note: 'introduced the parents more'},
-        {date: '2025-11-04', words: 932, note: 'working on novel while sick'},
-        {date: '2025-11-05', words: 1136, note: 'working on novel while sick. need to research before picking up tomorrow'},
-        {date: '2025-11-06', words: 899, note: 'did a lot of background planning, introduced side characters, ironed out details'},
-        {date: '2025-11-07', words: 1698, note: 'forest scene and ball'},
-        {date: '2025-11-09', words: 986, note: 'nice little sisters scene'},
-        {date: '2025-11-10', words: 858, note: 'sisters scene and hartwell scene'},
-        {date: '2025-11-11', words: 1222, note: 'hartwell scene and tam lin scene'},
-        {date: '2025-11-12', words: 878, note: 'hard-won words, barely dragged it out'},
-        {date: '2025-11-13', words: 1020, note: 'forest scene'},
-        {date: '2025-11-14', words: 866, note: ''},
-        {date: '2025-11-15', words: 942, note: 'thornton fight scene'},
-        {date: '2025-11-17', words: 1419, note: 'first fairy ball and night sneak away'},
-        {date: '2025-11-19', words: 1421, note: 'interview servant and consult father'},
-        {date: '2025-11-20', words: 1337, note: '2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day'},
-        {date: '2025-11-21', words: 862, note: 'Scene with two characters in the woods discovering a ball invitation and doing an experiment'},
-        {date: '2025-11-22', words: 871, note: 'Setup for fairy ball scene'},
-        {date: '2025-11-23', words: 841, note: 'Intro to ball scene. Done'},
-        {date: '2025-11-24', words: 929, note: 'Part of ball scene'},
-        {date: '2025-11-25', words: 970, note: 'More ball'},
-        {date: '2025-11-26', words: 1710, note: 'More ball scene 🎉 25,000 WORD GOAL COMPLETE! (25,475 total = 101.9% of goal)'}
+        // Add your December writing sessions here
+        // Example: {date: '2025-12-01', words: 1200, note: 'Your notes here'}
       ],
       essays: [
         {id: 'essay1', title: '', done: false},
@@ -155,27 +242,24 @@
       ]
     };
 
-    // load state (now uses hardcoded data)
-    function load(){
-      // State is now hardcoded above - no localStorage loading needed
-      console.log('Using hardcoded progress data');
-    }
-
-    function save(){ 
-      // Save function disabled - data is hardcoded
-      console.log('Save disabled - using hardcoded data');
-    }
-
-    function uid(){ return Math.random().toString(36).slice(2,10); }
-
     // --- renderers ---
     function fmt(n){ return (n||0).toLocaleString(); }
 
-    function renderSessions(){
-      const tbody = el('#sessionTable tbody');
+    function renderDecemberSessions(){
+      const tbody = el('#decSessionTable tbody');
+      
+      if (decemberState.sessions.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let\'s get writing!</td></tr>';
+        el('#decFictionTotal').textContent = '0';
+        el('#decSessionCount').textContent = '0';
+        el('#decFictionPct').textContent = '0%';
+        el('#decFictionBar').style.width = '0%';
+        return;
+      }
+
       tbody.innerHTML = '';
-      state.sessions.sort((a,b)=> (b.date||'').localeCompare(a.date||''));
-      for(const s of state.sessions){
+      decemberState.sessions.sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+      for(const s of decemberState.sessions){
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${s.date||''}</td>
@@ -184,24 +268,24 @@
         tbody.appendChild(tr);
       }
 
-      const total = state.sessions.reduce((a,b)=>a + (+b.words||0), 0);
-      el('#fictionTotal').textContent = fmt(total);
-      el('#sessionCount').textContent = state.sessions.length;
-      const target = +state.targetWords||25000;
-      el('#fictionTarget').textContent = fmt(target);
+      const total = decemberState.sessions.reduce((a,b)=>a + (+b.words||0), 0);
+      el('#decFictionTotal').textContent = fmt(total);
+      el('#decSessionCount').textContent = decemberState.sessions.length;
+      const target = +decemberState.targetWords||25000;
+      el('#decFictionTarget').textContent = fmt(target);
       const pct = Math.min(100, Math.round((total/target)*100));
-      el('#fictionPct').textContent = pct + '%';
-      el('#fictionBar').style.width = pct + '%';
+      el('#decFictionPct').textContent = pct + '%';
+      el('#decFictionBar').style.width = pct + '%';
     }
 
-    function renderEssays(){
-      const box = el('#essays');
+    function renderDecemberEssays(){
+      const box = el('#decEssays');
       box.innerHTML = '';
       let done = 0;
-      for(const e of state.essays){ if(e.done) done++; }
-      el('#essayCount').textContent = done;
+      for(const e of decemberState.essays){ if(e.done) done++; }
+      el('#decEssayCount').textContent = done;
 
-      state.essays.forEach((e, idx)=>{
+      decemberState.essays.forEach((e, idx)=>{
         const row = document.createElement('div');
         row.className = 'essay' + (e.done? ' published' : '');
         row.innerHTML = `
@@ -213,26 +297,18 @@
       });
     }
 
-
-    function calculateStatus(){
+    function calculateDecemberStatus(){
       const now = new Date();
-      const startDate = new Date('2025-11-01'); // November 1st start
-      const endDate = new Date('2025-12-01');   // December 1st deadline
+      const startDate = new Date('2025-12-01'); // December 1st start
+      const endDate = new Date('2026-01-01');   // January 1st deadline
       
-      // Debug: log the dates
-      console.log('Current date:', now.toDateString());
-      console.log('Start date:', startDate.toDateString());
-      console.log('End date:', endDate.toDateString());
-      console.log('Now >= endDate?', now >= endDate);
-      console.log('Now < startDate?', now < startDate);
+      const totalWords = decemberState.sessions.reduce((a,b) => a + (+b.words||0), 0);
+      const essaysCompleted = decemberState.essays.filter(e => e.done).length;
       
-      const totalWords = state.sessions.reduce((a,b) => a + (+b.words||0), 0);
-      const essaysCompleted = state.essays.filter(e => e.done).length;
-      
-      // Check if challenge is complete (December 1st or later)
+      // Check if challenge is complete (January 1st or later)
       if (now >= endDate) {
         // Final results - WIN or FAIL
-        const fictionBadge = el('#fictionStatus');
+        const fictionBadge = el('#decFictionStatus');
         if (totalWords >= 25000) {
           fictionBadge.textContent = `WIN (${totalWords.toLocaleString()} words)`;
           fictionBadge.className = 'status-badge status-win';
@@ -241,7 +317,7 @@
           fictionBadge.className = 'status-badge status-fail';
         }
         
-        const essayBadge = el('#essayStatus');
+        const essayBadge = el('#decEssayStatus');
         if (essaysCompleted >= 4) {
           essayBadge.textContent = `WIN (${essaysCompleted}/4 essays)`;
           essayBadge.className = 'status-badge status-win';
@@ -254,27 +330,26 @@
       
       // Check if challenge hasn't started yet
       if (now < startDate) {
-        const fictionBadge = el('#fictionStatus');
+        const fictionBadge = el('#decFictionStatus');
         fictionBadge.textContent = 'not started yet';
         fictionBadge.className = 'status-badge status-on-track';
         
-        const essayBadge = el('#essayStatus');
+        const essayBadge = el('#decEssayStatus');
         essayBadge.textContent = 'not started yet';
         essayBadge.className = 'status-badge status-on-track';
         return;
       }
       
-      // Calculate days elapsed since start (only count if started)
+      // Calculate days elapsed since start
       const daysElapsed = Math.max(0, Math.floor((now - startDate) / (1000 * 60 * 60 * 24)));
       
-      // Fiction status (834 words per day target)
-      const targetWords = daysElapsed * 834;
+      // Fiction status (806 words per day target for 31 days)
+      const targetWords = daysElapsed * 806;
       
       let fictionStatus = 'on track';
       let fictionClass = 'status-on-track';
       
       if (daysElapsed === 0) {
-        // First day - just check if any progress made
         fictionStatus = totalWords > 0 ? 'started' : 'on track';
       } else if (totalWords > targetWords * 1.1) {
         fictionStatus = 'ahead';
@@ -284,14 +359,13 @@
         fictionClass = 'status-behind';
       }
       
-      // Essay status (1 essay every 7 days)
-      const targetEssays = Math.floor(daysElapsed / 7);
+      // Essay status (1 essay every 7-8 days)
+      const targetEssays = Math.floor(daysElapsed / 7.75);
       
       let essayStatus = 'on track';
       let essayClass = 'status-on-track';
       
       if (daysElapsed < 7) {
-        // First week - no essays due yet
         essayStatus = essaysCompleted > 0 ? 'ahead' : 'on track';
         essayClass = essaysCompleted > 0 ? 'status-ahead' : 'status-on-track';
       } else if (essaysCompleted > targetEssays) {
@@ -303,11 +377,11 @@
       }
       
       // Update UI
-      const fictionBadge = el('#fictionStatus');
+      const fictionBadge = el('#decFictionStatus');
       fictionBadge.textContent = fictionStatus;
       fictionBadge.className = `status-badge ${fictionClass}`;
       
-      const essayBadge = el('#essayStatus');
+      const essayBadge = el('#decEssayStatus');
       essayBadge.textContent = essayStatus;
       essayBadge.className = `status-badge ${essayClass}`;
     }
@@ -325,20 +399,16 @@
 
     function update(){
       displayCurrentDate();
-      renderSessions();
-      renderEssays();
-      calculateStatus();
+      renderDecemberSessions();
+      renderDecemberEssays();
+      calculateDecemberStatus();
     }
-
 
     // --- helpers ---
     function escapeHTML(s=''){ return s.replace(/[&<>]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]) ); }
-    function escapeAttr(s=''){ return s.replace(/[&<>\"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]) ); }
 
     // --- initial boot ---
     function boot(){
-      load();
-      // State is already populated with hardcoded data
       update();
     }
 
