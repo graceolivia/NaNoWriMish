@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>november + december writing tracker — fiction + substack</title>
+  <title>november + december writing tracker — fiction</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&display=swap');
     :root{
@@ -18,51 +18,30 @@
     header{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:20px 0 8px}
     h1{font-size:clamp(22px,2.4vw,30px);margin:0}
     .subtitle{color:var(--muted);font-size:13px}
-    .grid{display:grid;gap:16px}
-    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
     .card{background:linear-gradient(180deg, rgba(0,255,0,0.05), rgba(0,255,0,0.02));border:1px solid #00ff00;border-radius:var(--radius);padding:16px 16px 18px;box-shadow:0 0 10px rgba(0,255,0,.3)}
     .card h2{margin:0 0 8px;font-size:18px}
     .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .muted{color:var(--muted)}
-    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 10px;background:#001100;border:1px solid #00ff00;font-size:12px}
     .bar{height:18px;border-radius:999px;background:#001100;border:1px solid #00ff00;overflow:hidden;position:relative}
     .bar > span{display:block;height:100%;background:linear-gradient(90deg, #00ff00, #44ff44);width:0%}
     .kpi{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
     .kpi .box{background:#001100;border:1px solid #00ff00;border-radius:12px;padding:10px 12px;min-width:120px}
     .kpi .big{font-weight:700;font-variant-numeric:tabular-nums}
     label{font-size:13px;color:var(--muted)}
-    input[type="text"], input[type="number"], input[type="date"], textarea{width:100%;padding:10px 12px;border-radius:12px;border:1px solid #00ff00;background:#001100;color:var(--text);}
-    textarea{min-height:72px}
-    button{cursor:pointer;border:1px solid #00ff00;background:#001100;color:var(--text);padding:10px 14px;border-radius:12px}
-    button.primary{background:linear-gradient(180deg,#002200,#001100);border-color:#00ff00}
-    button.ghost{background:transparent;border-color:#00ff00}
-    button.ok{background:#002200;border-color:#00ff00;color:#00ff00}
-    button.warn{background:#002200;border-color:#44ff00;color:#44ff00}
-    button.danger{background:#220000;border-color:#ff4400;color:#ff4400}
     table{width:100%;border-collapse:collapse;border-spacing:0}
     th,td{padding:8px 10px;border-bottom:1px dashed #00ff00;vertical-align:top}
     th{color:var(--muted);text-align:left;font-weight:600}
     tr:last-child td{border-bottom:none}
     .right{text-align:right}
     .small{font-size:12px}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .vis-hide{display:none}
-    .footer{margin-top:24px;color:var(--muted);font-size:12px}
-    .checkbox-row{display:flex;gap:10px;align-items:center}
-    .essay{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px;border-radius:12px;border:1px solid #00ff00;background:#001100}
-    .essay input[type="text"]{height:36px}
-    .essay.published{background:linear-gradient(180deg,#002200,#001100);opacity:.95}
-    .badge{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #00ff00;background:#001100;color:var(--muted)}
-    details{border:1px solid #00ff00;background:#001100;border-radius:12px;padding:8px 10px}
-    details > summary{cursor:pointer;color:var(--muted)}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .section-divider{margin:32px 0;border-top:2px solid #00ff00;padding-top:16px}
     .status-badge{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid;margin-left:8px;font-weight:normal}
     .status-on-track{background:#002200;border-color:#00ff00;color:#00ff00}
     .status-ahead{background:#002200;border-color:#44ff00;color:#44ff00}
     .status-behind{background:#220000;border-color:#ff4400;color:#ff4400}
     .status-win{background:#004400;border-color:#00ff00;color:#00ff00;font-weight:bold}
     .status-fail{background:#440000;border-color:#ff4400;color:#ff4400;font-weight:bold}
-    .section-divider{margin:32px 0;border-top:2px solid #00ff00;padding-top:16px}
+    .footer{margin-top:24px;color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
@@ -75,145 +54,82 @@
       </div>
     </header>
 
-    <!-- DECEMBER SECTION (ACTIVE) -->\n    <div style="margin-bottom:32px">
+    <!-- DECEMBER SECTION (ACTIVE) -->
+    <div style="margin-bottom:32px">
       <h2 style="color:var(--text);margin-bottom:16px">🎄 December Progress — NaNoWriMo Part 2</h2>
       
-      <div class="grid">
-        <!-- LEFT COLUMN: FICTION -->
-        <section class="card" id="decFictionCard">
-          <h2>fiction progress <span id="decFictionStatus" class="status-badge status-on-track">on track</span></h2>
-          <div class="bar" aria-label="december fiction progress">
-            <span id="decFictionBar" style="width:0%"></span>
-          </div>
-          <div class="kpi">
-            <div class="box"><div class="muted small">total words</div><div class="big" id="decFictionTotal">0</div></div>
-            <div class="box"><div class="muted small">target</div><div class="big" id="decFictionTarget">25,000</div></div>
-            <div class="box"><div class="muted small">completion</div><div class="big" id="decFictionPct">0%</div></div>
-            <div class="box"><div class="muted small">sessions</div><div class="big" id="decSessionCount">0</div></div>
-          </div>
+      <section class="card" id="decFictionCard">
+        <h2>fiction progress <span id="decFictionStatus" class="status-badge status-on-track">on track</span></h2>
+        <div class="bar" aria-label="december fiction progress">
+          <span id="decFictionBar" style="width:0%"></span>
+        </div>
+        <div class="kpi">
+          <div class="box"><div class="muted small">total words</div><div class="big" id="decFictionTotal">0</div></div>
+          <div class="box"><div class="muted small">target</div><div class="big" id="decFictionTarget">25,000</div></div>
+          <div class="box"><div class="muted small">completion</div><div class="big" id="decFictionPct">0%</div></div>
+          <div class="box"><div class="muted small">sessions</div><div class="big" id="decSessionCount">0</div></div>
+        </div>
 
-          <div style="height:12px"></div>
-          <table id="decSessionTable">
-            <thead>
-              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
-            </thead>
-            <tbody>
-              <tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let's get writing!</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
-        <section class="card">
-          <h2>substack goals <span id="decEssayStatus" class="status-badge status-on-track">on track</span></h2>
-          <div class="row"><div class="badge"><span id="decEssayCount">0</span>/4 done</div></div>
-          <div style="height:8px"></div>
-          <div id="decEssays">
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-          </div>
-        </section>
-      </div>
+        <div style="height:12px"></div>
+        <table id="decSessionTable">
+          <thead>
+            <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="3" class="muted" style="text-align:center">No sessions yet — let's get writing!</td></tr>
+          </tbody>
+        </table>
+      </section>
     </div>
 
     <!-- NOVEMBER SECTION (COMPLETED) -->
     <div class="section-divider">
       <h2 style="color:var(--text);margin-bottom:16px">📝 November Progress — COMPLETE!</h2>
       
-      <div class="grid">
-        <!-- LEFT COLUMN: FICTION -->
-        <section class="card" id="novFictionCard">
-          <h2>fiction progress <span class="status-badge status-win">WIN (25,475 words)</span></h2>
-          <div class="bar" aria-label="november fiction progress">
-            <span style="width:100%"></span>
-          </div>
-          <div class="kpi">
-            <div class="box"><div class="muted small">total words</div><div class="big">25,475</div></div>
-            <div class="box"><div class="muted small">target</div><div class="big">25,000</div></div>
-            <div class="box"><div class="muted small">completion</div><div class="big">101.9%</div></div>
-            <div class="box"><div class="muted small">sessions</div><div class="big">23</div></div>
-          </div>
+      <section class="card" id="novFictionCard">
+        <h2>fiction progress <span class="status-badge status-win">WIN (25,475 words)</span></h2>
+        <div class="bar" aria-label="november fiction progress">
+          <span style="width:100%"></span>
+        </div>
+        <div class="kpi">
+          <div class="box"><div class="muted small">total words</div><div class="big">25,475</div></div>
+          <div class="box"><div class="muted small">target</div><div class="big">25,000</div></div>
+          <div class="box"><div class="muted small">completion</div><div class="big">101.9%</div></div>
+          <div class="box"><div class="muted small">sessions</div><div class="big">23</div></div>
+        </div>
 
-          <div style="height:12px"></div>
-          <table id="novSessionTable">
-            <thead>
-              <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>2025-11-26</td><td class="right">1,710</td><td>More ball scene 🎉 25,000 WORD GOAL COMPLETE! (25,475 total = 101.9% of goal)</td></tr>
-              <tr><td>2025-11-25</td><td class="right">970</td><td>More ball</td></tr>
-              <tr><td>2025-11-24</td><td class="right">929</td><td>Part of ball scene</td></tr>
-              <tr><td>2025-11-23</td><td class="right">841</td><td>Intro to ball scene. Done</td></tr>
-              <tr><td>2025-11-22</td><td class="right">871</td><td>Setup for fairy ball scene</td></tr>
-              <tr><td>2025-11-21</td><td class="right">862</td><td>Scene with two characters in the woods discovering a ball invitation and doing an experiment</td></tr>
-              <tr><td>2025-11-20</td><td class="right">1,337</td><td>2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day</td></tr>
-              <tr><td>2025-11-19</td><td class="right">1,421</td><td>interview servant and consult father</td></tr>
-              <tr><td>2025-11-17</td><td class="right">1,419</td><td>first fairy ball and night sneak away</td></tr>
-              <tr><td>2025-11-15</td><td class="right">942</td><td>thornton fight scene</td></tr>
-              <tr><td>2025-11-14</td><td class="right">866</td><td></td></tr>
-              <tr><td>2025-11-13</td><td class="right">1,020</td><td>forest scene</td></tr>
-              <tr><td>2025-11-12</td><td class="right">878</td><td>hard-won words, barely dragged it out</td></tr>
-              <tr><td>2025-11-11</td><td class="right">1,222</td><td>hartwell scene and tam lin scene</td></tr>
-              <tr><td>2025-11-10</td><td class="right">858</td><td>sisters scene and hartwell scene</td></tr>
-              <tr><td>2025-11-09</td><td class="right">986</td><td>nice little sisters scene</td></tr>
-              <tr><td>2025-11-07</td><td class="right">1,698</td><td>forest scene and ball</td></tr>
-              <tr><td>2025-11-06</td><td class="right">899</td><td>did a lot of background planning, introduced side characters, ironed out details</td></tr>
-              <tr><td>2025-11-05</td><td class="right">1,136</td><td>working on novel while sick. need to research before picking up tomorrow</td></tr>
-              <tr><td>2025-11-04</td><td class="right">932</td><td>working on novel while sick</td></tr>
-              <tr><td>2025-11-03</td><td class="right">908</td><td>introduced the parents more</td></tr>
-              <tr><td>2025-11-02</td><td class="right">1,627</td><td>wrote chapter 2, introduced mysterious woods guy and ominous warnings</td></tr>
-              <tr><td>2025-11-01</td><td class="right">1,143</td><td>wrote a short flashback preamble that introduced the main character and her sister</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <!-- RIGHT COLUMN: ESSAYS & SETTINGS -->
-        <section class="card">
-          <h2>substack goals <span id="novEssayStatus" class="status-badge">0/4 done</span></h2>
-          <div class="row"><div class="badge"><span id="novEssayCount">0</span>/4 done</div></div>
-          <div style="height:8px"></div>
-          <div id="novEssays">
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-            <div class="essay">
-              <span style="width:20px;text-align:center;display:inline-block">○</span>
-              <span style="flex:1">untitled essay</span>
-              <span class="badge">pending</span>
-            </div>
-          </div>
-        </section>
-      </div>
+        <div style="height:12px"></div>
+        <table id="novSessionTable">
+          <thead>
+            <tr><th style="width:120px">date</th><th class="right" style="width:90px">words</th><th>note</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2025-11-26</td><td class="right">1,710</td><td>More ball scene 🎉 25,000 WORD GOAL COMPLETE! (25,475 total = 101.9% of goal)</td></tr>
+            <tr><td>2025-11-25</td><td class="right">970</td><td>More ball</td></tr>
+            <tr><td>2025-11-24</td><td class="right">929</td><td>Part of ball scene</td></tr>
+            <tr><td>2025-11-23</td><td class="right">841</td><td>Intro to ball scene. Done</td></tr>
+            <tr><td>2025-11-22</td><td class="right">871</td><td>Setup for fairy ball scene</td></tr>
+            <tr><td>2025-11-21</td><td class="right">862</td><td>Scene with two characters in the woods discovering a ball invitation and doing an experiment</td></tr>
+            <tr><td>2025-11-20</td><td class="right">1,337</td><td>2-hour focused work session in the morning (782 words) and continued writing during afternoon nap time to reach 1337 for the day</td></tr>
+            <tr><td>2025-11-19</td><td class="right">1,421</td><td>interview servant and consult father</td></tr>
+            <tr><td>2025-11-17</td><td class="right">1,419</td><td>first fairy ball and night sneak away</td></tr>
+            <tr><td>2025-11-15</td><td class="right">942</td><td>thornton fight scene</td></tr>
+            <tr><td>2025-11-14</td><td class="right">866</td><td></td></tr>
+            <tr><td>2025-11-13</td><td class="right">1,020</td><td>forest scene</td></tr>
+            <tr><td>2025-11-12</td><td class="right">878</td><td>hard-won words, barely dragged it out</td></tr>
+            <tr><td>2025-11-11</td><td class="right">1,222</td><td>hartwell scene and tam lin scene</td></tr>
+            <tr><td>2025-11-10</td><td class="right">858</td><td>sisters scene and hartwell scene</td></tr>
+            <tr><td>2025-11-09</td><td class="right">986</td><td>nice little sisters scene</td></tr>
+            <tr><td>2025-11-07</td><td class="right">1,698</td><td>forest scene and ball</td></tr>
+            <tr><td>2025-11-06</td><td class="right">899</td><td>did a lot of background planning, introduced side characters, ironed out details</td></tr>
+            <tr><td>2025-11-05</td><td class="right">1,136</td><td>working on novel while sick. need to research before picking up tomorrow</td></tr>
+            <tr><td>2025-11-04</td><td class="right">932</td><td>working on novel while sick</td></tr>
+            <tr><td>2025-11-03</td><td class="right">908</td><td>introduced the parents more</td></tr>
+            <tr><td>2025-11-02</td><td class="right">1,627</td><td>wrote chapter 2, introduced mysterious woods guy and ominous warnings</td></tr>
+            <tr><td>2025-11-01</td><td class="right">1,143</td><td>wrote a short flashback preamble that introduced the main character and her sister</td></tr>
+          </tbody>
+        </table>
+      </section>
     </div>
 
     <div class="footer">a custom page to keep me on track for writing challenges. November goal: COMPLETE! 🎉 Now onto December!</div>
@@ -228,16 +144,9 @@
     // DECEMBER PROGRESS DATA - EDIT THESE VALUES
     const decemberState = {
       targetWords: 25000,
-      targetEssays: 4,
       sessions: [
         // Add your December writing sessions here
         // Example: {date: '2025-12-01', words: 1200, note: 'Your notes here'}
-      ],
-      essays: [
-        {id: 'essay1', title: '', done: false},
-        {id: 'essay2', title: '', done: false},
-        {id: 'essay3', title: '', done: false},
-        {id: 'essay4', title: '', done: false}
       ]
     };
 
@@ -277,32 +186,12 @@
       el('#decFictionBar').style.width = pct + '%';
     }
 
-    function renderDecemberEssays(){
-      const box = el('#decEssays');
-      box.innerHTML = '';
-      let done = 0;
-      for(const e of decemberState.essays){ if(e.done) done++; }
-      el('#decEssayCount').textContent = done;
-
-      decemberState.essays.forEach((e, idx)=>{
-        const row = document.createElement('div');
-        row.className = 'essay' + (e.done? ' published' : '');
-        row.innerHTML = `
-          <span style="width:20px;text-align:center;display:inline-block">${e.done? '✓' : '○'}</span>
-          <span style="flex:1">${e.title || 'untitled essay'}</span>
-          <span class="badge">${e.done? 'done' : 'pending'}</span>
-        `;
-        box.appendChild(row);
-      });
-    }
-
     function calculateDecemberStatus(){
       const now = new Date();
       const startDate = new Date('2025-12-01'); // December 1st start
       const endDate = new Date('2026-01-01');   // January 1st deadline
       
       const totalWords = decemberState.sessions.reduce((a,b) => a + (+b.words||0), 0);
-      const essaysCompleted = decemberState.essays.filter(e => e.done).length;
       
       // Check if challenge is complete (January 1st or later)
       if (now >= endDate) {
@@ -315,15 +204,6 @@
           fictionBadge.textContent = `FAIL (${totalWords.toLocaleString()}/25,000)`;
           fictionBadge.className = 'status-badge status-fail';
         }
-        
-        const essayBadge = el('#decEssayStatus');
-        if (essaysCompleted >= 4) {
-          essayBadge.textContent = `WIN (${essaysCompleted}/4 essays)`;
-          essayBadge.className = 'status-badge status-win';
-        } else {
-          essayBadge.textContent = `FAIL (${essaysCompleted}/4 essays)`;
-          essayBadge.className = 'status-badge status-fail';
-        }
         return;
       }
       
@@ -332,10 +212,6 @@
         const fictionBadge = el('#decFictionStatus');
         fictionBadge.textContent = 'not started yet';
         fictionBadge.className = 'status-badge status-on-track';
-        
-        const essayBadge = el('#decEssayStatus');
-        essayBadge.textContent = 'not started yet';
-        essayBadge.className = 'status-badge status-on-track';
         return;
       }
       
@@ -358,31 +234,10 @@
         fictionClass = 'status-behind';
       }
       
-      // Essay status (1 essay every 7-8 days)
-      const targetEssays = Math.floor(daysElapsed / 7.75);
-      
-      let essayStatus = 'on track';
-      let essayClass = 'status-on-track';
-      
-      if (daysElapsed < 7) {
-        essayStatus = essaysCompleted > 0 ? 'ahead' : 'on track';
-        essayClass = essaysCompleted > 0 ? 'status-ahead' : 'status-on-track';
-      } else if (essaysCompleted > targetEssays) {
-        essayStatus = 'ahead';
-        essayClass = 'status-ahead';
-      } else if (essaysCompleted < targetEssays) {
-        essayStatus = 'behind';
-        essayClass = 'status-behind';
-      }
-      
       // Update UI
       const fictionBadge = el('#decFictionStatus');
       fictionBadge.textContent = fictionStatus;
       fictionBadge.className = `status-badge ${fictionClass}`;
-      
-      const essayBadge = el('#decEssayStatus');
-      essayBadge.textContent = essayStatus;
-      essayBadge.className = `status-badge ${essayClass}`;
     }
 
     function displayCurrentDate(){
@@ -399,7 +254,6 @@
     function update(){
       displayCurrentDate();
       renderDecemberSessions();
-      renderDecemberEssays();
       calculateDecemberStatus();
     }
 
